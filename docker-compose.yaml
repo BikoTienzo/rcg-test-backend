@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  csharp-web-api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: rcg-test-backend
+    restart: always
+
+    environment:
+      - ASPNETCORE_HTTP_PORT=https://+:7087
+      - ASPNETCORE_URLS=http://+:7086
+
+    ports:
+      - "7086:7086"
+      - "7087:7087"
